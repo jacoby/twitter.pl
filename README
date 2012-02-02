@@ -1,0 +1,17 @@
+twitter.pl
+
+Application to send tweets to Twitter via the command line
+
+Usage:
+    twitter.pl This is a tweet
+    echo This is another tweet, using \"quotes\" | twitter.pl
+
+Changelog:
+    2012-02-02 - initial commit to Github
+
+
+Copyright 2012, David Jacoby
+
+Twitter.pl, like Perl, may be copied only under the terms of either the
+Artistic License or the GNU General Public License, which may be found
+in the Perl 5 source kit.

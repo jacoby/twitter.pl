@@ -5,10 +5,6 @@
 
 # Next step is to get the keys and secrets to a config.
 
-# you need to get your own access token and secret (which identifies you
-# as a developer or application) and consumer key and secret (which
-# identifies you as a Twitter user). You cannot use mine.
-
 use 5.010 ;
 use strict ;
 use Carp ;
@@ -59,7 +55,6 @@ if ( length $status < 1 ) {
     exit ;
     }
 
-
 # GET key and secret from http://twitter.com/apps
 my $twit = Net::Twitter->new(
     traits          => [ 'API::REST', 'OAuth' ],
@@ -90,7 +85,7 @@ unless ( $twit->authorized ) {
     chomp $pin ;
     my ( $access_token, $access_token_secret, $user_id, $screen_name ) =
         $twit->request_access_token( verifier => $pin ) ;
-    save_tokens( $access_token, $access_token_secret ) ;    # if necessary
+    save_tokens( $user, $access_token, $access_token_secret ) ;
     }
 
 if ( $twit->update( $status ) ) {

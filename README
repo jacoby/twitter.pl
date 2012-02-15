@@ -8,7 +8,9 @@ Usage:
 
 Changelog:
     2012-02-02 - initial commit to Github
-
+    2012-02-04 - started differential save
+    2012-02-15 - Added support for minified URLs and configuration
+                 saved in ~/.twitter.cnf
 
 Copyright 2012, David Jacoby
 

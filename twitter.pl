@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 # largely taken verbatim from
 # http://search.cpan.org/dist/Net-Twitter/lib/Net/Twitter/Role/OAuth.pm
@@ -9,6 +9,7 @@ use 5.010 ;
 use strict ;
 use Carp ;
 use Data::Dumper ;
+use Encode 'decode' ;
 use IO::Interactive qw{ interactive } ;
 use Net::Twitter ;
 use WWW::Shorten 'TinyURL' ;
@@ -57,7 +58,7 @@ if ( length $status < 1 ) {
 
 # GET key and secret from http://twitter.com/apps
 my $twit = Net::Twitter->new(
-    traits          => [ 'API::REST', 'OAuth' ],
+    traits          => [qw/API::RESTv1_1/],
     consumer_key    => $config->{ consumer_key },
     consumer_secret => $config->{ consumer_secret },
     ) ;
